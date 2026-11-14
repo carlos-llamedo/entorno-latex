@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: Si usa este software, cítelo como se indica
+title: Estilos LaTeX propios
+authors:
+  - family-names: Llamedo Gutiérrez
+    given-names: Carlos
+    email: carlosllamedo@protonmail.com
+    orcid: https://orcid.org/0009-0009-2819-5157
+date-released: 2026-11-14
+abstract: Paquetes de estilo para LaTeX (LuaLaTeX).
+keywords:
+  - plaintext
+  - latex
+  - luatex
+  - publishing
+  - typesetting
+license: MIT
+license-url: https://mit-license.org
+url: https://github.com/carlos-llamedo/entorno-latex
+repository-code: https://github.com/carlos-llamedo/entorno-latex
