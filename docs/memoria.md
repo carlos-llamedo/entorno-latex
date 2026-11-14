@@ -5,9 +5,7 @@ date: 2026-10
 
 # El estilo `memoria.sty`
 
-[`memoria.sty`](../memoria.sty) es el estilo por defecto de la plantilla [`pandoc.tex`](https://github.com/carlos-llamedo/entorno-pandoc/blob/main/docs/plantilla.md): una maqueta para memorias académicas sobre la clase `book`, compilada con LuaLaTeX. También se puede usar en documentos LaTeX escritos a mano.
-
-Para que LaTeX lo encuentre, debe estar en el árbol TEXMF personal (véase el [README](../README.md#instalación)).
+[`memoria.sty`](../memoria.sty) es una maqueta para memorias académicas sobre la clase `book`, compilada con LuaLaTeX.
 
 * * *
 
