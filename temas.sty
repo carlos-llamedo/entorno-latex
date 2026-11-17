@@ -129,9 +129,6 @@
   \setlength{\parskip}{0pt}
 \fi
 
-\clubpenalty=10000
-\widowpenalty=10000
-\displaywidowpenalty=10000
 \setlength{\emergencystretch}{3em}
 
 \AddToHook{package/babel/after}{%
@@ -296,23 +293,31 @@
 \apptocmd{\ttl@labelling}{%
   \ifttl@label\else\ifx\ttl@Hy@saveanchor\@empty\ttl@Hy@steplink{#1}\fi\fi}{}{}
 \titleformat{\section}{\metafont\fontsize{16}{20}\selectfont}{\thesection}{1em}{}
-\titlespacing*{\section}{0pt}{2\baselineskip plus 2pt minus 2pt}{\baselineskip}
+\titlespacing*{\section}{0pt}{1.5\baselineskip plus 2pt minus 2pt}{0.5\baselineskip}
 \titleformat{\subsection}{\metafont\fontsize{14}{18}\selectfont}{\thesubsection}{1em}{}
-\titlespacing*{\subsection}{0pt}{1.5\baselineskip plus 2pt minus 2pt}{0.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{1\baselineskip plus 2pt minus 2pt}{0.25\baselineskip}
 \titleformat{\subsubsection}{\metafont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 \titleformat{\paragraph}[hang]{\metafont\normalsize\itshape}{\theparagraph}{1em}{}
 \titleformat{\subparagraph}[hang]{\metafont\normalsize}{\thesubparagraph}{1em}{}
 
 \RequirePackage{titletoc}
-\newcommand{\tem@pagina}{\llap{\makebox[\leftskip][l]{\mdseries\thecontentspage}}}
-\newcommand{\tem@versal}[1]{\textls{\metacaps{#1}}}
-\titlecontents{section}[4em]
-  {\addvspace{.25\baselineskip}\metafont}
-  {\tem@pagina\contentslabel{1.5em}\tem@versal}
-  {\tem@pagina\tem@versal}
+\contentsmargin{0pt}
+\newcommand{\tem@numero}{{\bfseries\color{Maroon}\thecontentslabel}\hfil}
+\titlecontents{section}[1.5em]
+  {\addvspace{.25\baselineskip}\rightskip=0pt plus 1fil\relax\metafont}
+  {\contentslabel[\tem@numero]{1.5em}}
   {}
-\titlecontents*{subsection}[5.5em]{}{}{}{, \thecontentspage}[; ][]
-\titlecontents*{subsubsection}[5.5em]{}{}{}{, \thecontentspage}[; ][]
+  {}
+\titlecontents{subsection}[3.75em]
+  {\rightskip=0pt plus 1fil\relax\metafont}
+  {\contentslabel[\tem@numero]{2.25em}}
+  {}
+  {}
+\titlecontents{subsubsection}[6.75em]
+  {\rightskip=0pt plus 1fil\relax\metafont}
+  {\contentslabel[\tem@numero]{3em}}
+  {}
+  {}
 
 \RequirePackage{fancyhdr}
 \iftem@headscaps
