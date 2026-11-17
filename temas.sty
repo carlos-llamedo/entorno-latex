@@ -43,7 +43,7 @@
 
 \@twosidetrue
 \@mparswitchtrue
-\flushbottom
+\raggedbottom
 
 \@ifpackageloaded{geometry}{}{%
   \RequirePackage[
@@ -129,9 +129,9 @@
   \setlength{\parskip}{0pt}
 \fi
 
-\clubpenalty=9999
-\widowpenalty=9999
-\displaywidowpenalty=9999
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
 \setlength{\emergencystretch}{3em}
 
 \AddToHook{package/babel/after}{%
@@ -291,7 +291,6 @@
   \titlespacing*{\section}{0pt}{0pt}{0.5\baselineskip}%
   \ifdefined\pdfbookmark\pdfbookmark[1]{\contentsname}{toc}\fi}
 \AddToHook{cmd/tableofcontents/after}{\tem@enindicefalse}
-\providecommand{\backmatter}{\clearpage}
 
 \RequirePackage[compact]{titlesec}
 \apptocmd{\ttl@labelling}{%
