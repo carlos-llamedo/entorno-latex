@@ -291,6 +291,7 @@
   \titlespacing*{\section}{0pt}{0pt}{0.5\baselineskip}%
   \ifdefined\pdfbookmark\pdfbookmark[1]{\contentsname}{toc}\fi}
 \AddToHook{cmd/tableofcontents/after}{\tem@enindicefalse}
+\providecommand{\backmatter}{\clearpage}
 
 \RequirePackage[compact]{titlesec}
 \apptocmd{\ttl@labelling}{%
