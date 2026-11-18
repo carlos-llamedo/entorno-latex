@@ -36,8 +36,6 @@
   \PackageWarningNoLine{temas}{Este estilo está pensado para la clase article}}
 
 \RequirePackage{etoolbox}
-% Nombres de color de xcolor (DarkSlateBlue…). Con Pandoc, la plantilla ya
-% carga xcolor con ellos antes que el estilo; esto cubre el uso sin Pandoc.
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 \RequirePackage{xcolor}
 
@@ -292,13 +290,14 @@
 \RequirePackage[compact]{titlesec}
 \apptocmd{\ttl@labelling}{%
   \ifttl@label\else\ifx\ttl@Hy@saveanchor\@empty\ttl@Hy@steplink{#1}\fi\fi}{}{}
-\titleformat{\section}{\metafont\fontsize{16}{20}\selectfont}{\thesection}{1em}{}
+\newcommand{\tem@etiqueta}[1]{\llap{\textcolor{Maroon}{#1}\enspace}}
+\titleformat{\section}{\metafont\fontsize{16}{20}\selectfont}{\tem@etiqueta{\thesection}}{0pt}{}
 \titlespacing*{\section}{0pt}{1.5\baselineskip plus 2pt minus 2pt}{0.5\baselineskip}
-\titleformat{\subsection}{\metafont\fontsize{14}{18}\selectfont}{\thesubsection}{1em}{}
+\titleformat{\subsection}{\metafont\fontsize{14}{18}\selectfont}{\tem@etiqueta{\thesubsection}}{0pt}{}
 \titlespacing*{\subsection}{0pt}{1\baselineskip plus 2pt minus 2pt}{0.25\baselineskip}
-\titleformat{\subsubsection}{\metafont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[hang]{\metafont\normalsize\itshape}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}[hang]{\metafont\normalsize}{\thesubparagraph}{1em}{}
+\titleformat{\subsubsection}{\metafont\normalsize\bfseries}{\tem@etiqueta{\thesubsubsection}}{0pt}{}
+\titleformat{\paragraph}[hang]{\metafont\normalsize\itshape}{\tem@etiqueta{\theparagraph}}{0pt}{}
+\titleformat{\subparagraph}[hang]{\metafont\normalsize}{\tem@etiqueta{\thesubparagraph}}{0pt}{}
 
 \RequirePackage{titletoc}
 \contentsmargin{0pt}
