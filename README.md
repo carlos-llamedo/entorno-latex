@@ -55,3 +55,5 @@ fontfamilyoptions:
 ## Derechos
 
 Este repositorio está bajo una [licencia MIT](LICENCE.md), Copyright © 2026 Carlos Llamedo.
+
+El icono de versión es «git-fork», en su grosor _light_, de [Phosphor Icons](https://github.com/phosphor-icons/core), bajo licencia MIT, Copyright © 2023 Phosphor Icons.

@@ -244,6 +244,14 @@
   \ifx\tem@correo\@empty\tem@autorimpreso
   \else\tem@mailto{\tem@correo}{\tem@autorimpreso}\fi}
 
+% Versión del documento con icono «git-fork», en su grosor light,
+% de Phosphor Icons (licencia MIT, Copyright © 2023 Phosphor Icons),
+% precompilado en version.pdf a partir de version.svg
+\RequirePackage{graphicx}
+\let\tem@version\@empty
+\newcommand{\docversion}[1]{\def\tem@version{#1}}
+\newcommand{\versionicon}{\includegraphics[height=0.6em]{version.pdf}}
+
 \newif\iftem@separar
 \newcommand{\tem@elemento}[1]{%
   \iftem@separar\ \textperiodcentered\ \fi#1\tem@separartrue}
@@ -262,7 +270,7 @@
      \tem@separarfalse
      \ifx\tem@autor\@empty\else\tem@elemento{\tem@autorimpreso}\fi
      \ifx\tem@correo\@empty\else\tem@elemento{\tem@mailto{\tem@correo}{\tem@correo}}\fi
-     \ifx\@date\@empty\else\tem@elemento{\@date}\fi\par}%
+     \ifx\tem@version\@empty\else\tem@elemento{\versionicon\,\tem@version}\fi\par}%
     \@thanks
   \endgroup
   \setcounter{footnote}{0}%
