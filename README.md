@@ -16,11 +16,11 @@ Paquetes de estilo para LaTeX (LuaLaTeX). Página, fuentes, títulos, encabezado
 - Una distribución [TeX](https://ctan.org/starter) con [LuaTeX](https://www.luatex.org/download.html).
 - Las fuentes por defecto de los estilos:
     1. _Serif_: [Arno Pro](https://fonts.adobe.com/fonts/arno) o [Source Serif 4](https://github.com/adobe-fonts/source-serif/releases/latest)
-    2. _Sans_: [Myriad Pro](https://fonts.adobe.com/fonts/myriad) o [Source Sans 3](https://github.com/adobe-fonts/source-sans/releases/latest)
+    2. _Sans_: [Cronos Pro](https://fonts.adobe.com/fonts/cronos) o [Source Sans 3](https://github.com/adobe-fonts/source-sans/releases/latest)
     3. Monoespaciada: [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/releases/latest)
     4. Matemática: [STIX Two Math](https://github.com/stipub/stixfonts/releases/latest)
 
-Los estilos no están limitados a estas fuentes. Si Arno Pro o Myriad Pro no están instaladas, se usan Source Serif 4 y Source Sans 3. Cualquier otra se elige con `\setmainfont` o, desde Pandoc, con `mainfont`, `sansfont`, `monofont` y `mathfont`.
+Los estilos no están limitados a estas fuentes. Si Arno Pro o Cronos Pro no están instaladas, se usan Source Serif 4 y Source Sans 3. Cualquier otra se elige con `\setmainfont` o, desde Pandoc, con `mainfont`, `sansfont`, `monofont` y `mathfont`.
 
 ## Instalación
 

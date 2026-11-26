@@ -30,7 +30,7 @@
   smallsize        .store = \mem@smallsize,
   tocstyle         .store = \mem@tocstyle,
 }
-\SetKeys[memoria]{titlefont=, titlefontoptions=, parindent=1cm, smallsize=\normalsize, tocstyle=margen}
+\SetKeys[memoria]{titlefont=, titlefontoptions=, parindent=1cm, smallsize=\footnotesize, tocstyle=margen}
 \ProcessKeyOptions[memoria]
 
 % Cuerpo de 12pt y papel A4, sean cuales sean las opciones de la clase.
@@ -80,7 +80,7 @@
   \edef\@tempa{#1}\ifx\@tempa#2#3\fi}
 \AddToHook{begindocument/before}{%
   \mem@fuente{\rmdefault}{\mem@rmdefault}{\setmainfont{Arno Pro}}%
-  \mem@fuente{\sfdefault}{\mem@sfdefault}{\setsansfont{Myriad Pro}}%
+  \mem@fuente{\sfdefault}{\mem@sfdefault}{\setsansfont{Cronos Pro}}%
   \mem@fuente{\ttdefault}{\mem@ttdefault}{\setmonofont{Source Code Pro}}%
   \@ifpackageloaded{microtype}{}{%
     \RequirePackage{microtype}%
@@ -94,7 +94,8 @@
     urlcolor=DarkSlateBlue, filecolor=black}}
 
 \ifx\mem@titlefont\@empty
-  \newcommand{\metafont}{\normalfont}
+  \expanded{\noexpand\newcommand\noexpand\metafont{\noexpand\sffamily
+    \noexpand\addfontfeatures{Numbers=OldStyle,\unexpanded\expandafter{\mem@titlefontoptions}}}}
 \else
   \expanded{\noexpand\newfontfamily\noexpand\displayfamily
     [Numbers=OldStyle,\unexpanded\expandafter{\mem@titlefontoptions}]

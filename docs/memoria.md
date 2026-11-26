@@ -17,7 +17,7 @@ Desde Pandoc se declaran en `fontfamilyoptions`, una por elemento; en LaTeX, com
 fontfamilyoptions:
   - headscaps=true
   - titlefont=Meta Pro
-  - smallsize=\footnotesize
+  - smallsize=\normalfont
   - tocstyle=columna
 ```
 
@@ -25,8 +25,8 @@ fontfamilyoptions:
 |---|---|---|---|
 | `parindent` | medida | `1cm` | Sangría de párrafo, y medida de listas, citas, notas y bibliografía |
 | `noindent` | booleano | — | Párrafos sin sangría y con espacio entre ellos |
-| `smallsize` | comando | `\normalsize` | Tamaño de notas, citas, pies, encabezados y código |
-| `titlefont` | cadena | — | Familia para títulos, encabezados, folios, índice y pies |
+| `smallsize` | comando | `\footnotesize` | Tamaño de notas, citas, pies, encabezados y código |
+| `titlefont` | cadena | la sans del documento | Familia para títulos, encabezados, folios, índice y pies |
 | `titlefontoptions` | cadena | — | Opciones de fontspec para `titlefont`, separadas por comas |
 | `tocstyle` | `tex`, `margen`, `columna` | `margen` | Diseño de los índices |
 | `headscaps` | booleano | — | Encabezados en versalitas en lugar de cursiva |
@@ -40,9 +40,9 @@ fontfamilyoptions:
 
 `parindent` acepta cualquier unidad LaTeX: `1cm`, `0.5in` (la anglosajona), `2em` (proporcional al cuerpo).
 
-`smallsize` acepta cualquier comando de tamaño. Con un cuerpo de `12pt`: `\footnotesize` da 10 pt, `\small` 10,95 pt, y `\normalsize` (por defecto) iguala los elementos secundarios con el cuerpo.
+`smallsize` acepta cualquier comando de tamaño. Con un cuerpo de `12pt`: `\footnotesize` (por defecto) da 10 pt, `\small` 10,95 pt, y `\normalsize` iguala los elementos secundarios con el cuerpo.
 
-`titlefont` permite combinar dos familias, p. ej. una sans para los títulos (`titlefont: Myriad Pro`) o dos serifs. Lleva siempre cifras elzevirianas. Las demás fuentes no son opciones del estilo: se cambian con las variables de Pandoc `mainfont`, `sansfont`, `monofont` y `mathfont`, fuera de `fontfamilyoptions` (véase [`plantilla`](https://github.com/carlos-llamedo/entorno-pandoc/blob/main/docs/plantilla.md#fuentes)).
+Sin `titlefont`, los títulos usan la familia sans del documento (Cronos Pro, o la que se declare con `sansfont`); `titlefont` elige otra, p. ej. una serif (`titlefont: Minion Pro`). Lleva siempre cifras elzevirianas. Las demás fuentes no son opciones del estilo: se cambian con las variables de Pandoc `mainfont`, `sansfont`, `monofont` y `mathfont`, fuera de `fontfamilyoptions` (véase [`plantilla`](https://github.com/carlos-llamedo/entorno-pandoc/blob/main/docs/plantilla.md#fuentes)).
 
 * * *
 
@@ -61,7 +61,7 @@ En `margen` y `columna`, las entradas de figuras, cuadros y listados llevan su n
 ## Valores por defecto
 
 - **Página:** márgenes de `3cm`, con encabezado y pie a media altura del margen. La variable `geometry` los sustituye. Los capítulos empiezan en cualquier página, salvo que se declare `classoption: openright`.
-- **Fuentes:** Arno Pro, Myriad Pro, Source Code Pro y STIX Two Math, con Source Serif 4, Source Sans 3 y Source Code Pro como fallbacks. Se aplican al final del preámbulo y solo si el documento no ha elegido otras, porque la primera fuente principal fija también la de los operadores matemáticos.
+- **Fuentes:** Arno Pro, Cronos Pro, Source Code Pro y STIX Two Math, con Source Serif 4, Source Sans 3 y Source Code Pro como fallbacks. Se aplican al final del preámbulo y solo si el documento no ha elegido otras, porque la primera fuente principal fija también la de los operadores matemáticos.
 - **Párrafo:** interlineado 1,5, sangría sin espacio entre párrafos, y control de viudas y huérfanas.
 - **Versalitas:** etiquetas de los pies, capítulos del índice, autor del epígrafe y encabezados con `headscaps` usan las versalitas de la fuente si las tiene; si no, mayúsculas. Los romanos, folios incluidos, los pone babel en versalitas cuando el español es la lengua principal; en otros idiomas o sin `lang` van en minúscula. Con una fuente sin versalitas, un fallo de `spanish.ldf` hace que también salgan en minúscula, con avisos de fuente en el registro.
 - **Encabezados:** en el verso, el autor (o el título si no hay autor); en el recto, el capítulo. El folio va en el exterior superior.
